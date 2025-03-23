@@ -16,7 +16,7 @@ const usersApi = baseApi.injectEndpoints({
         name,
         email,
         password,
-        created_at
+        created_at,
       }: {
         name: string;
         email: string;
@@ -36,23 +36,33 @@ const usersApi = baseApi.injectEndpoints({
       }),
     }),
     isAdmin: builder.query({
+      query: (email) => `/admin/${email}`,
+      providesTags: ["User"],
+    }),
+    isUser: builder.query({
       query: (email) => `/user/${email}`,
-      providesTags  : ['User']
+      providesTags: ["User"],
     }),
-
-    getUsers : builder.query<Users[], void>({
-      query: () => '/users',
-      providesTags  : ['User']
+    getUsers: builder.query<Users[], void>({
+      query: () => "/users",
+      providesTags: ["User"],
     }),
-    updateRole : builder.mutation({
-      query : ({id, newRole}) => ({
+    updateRole: builder.mutation({
+      query: ({ id, newRole }) => ({
         url: `/user/${id}`,
-        method: 'PATCH',
-        body: { newRole }
+        method: "PATCH",
+        body: { newRole },
       }),
-      invalidatesTags: ['User']
-    })
+      invalidatesTags: ["User"],
+    }),
   }),
 });
 
-export const { useCreateUserMutation, useSignInUserMutation, useIsAdminQuery, useGetUsersQuery, useUpdateRoleMutation } = usersApi;
+export const {
+  useCreateUserMutation,
+  useSignInUserMutation,
+  useIsAdminQuery,
+  useGetUsersQuery,
+  useUpdateRoleMutation,
+  useIsUserQuery
+} = usersApi;

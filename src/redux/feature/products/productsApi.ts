@@ -33,7 +33,7 @@ export const productsApi = baseApi.injectEndpoints({
         `/products?currentCategory=${currentCategory}&searchText=${searchText}`,
       providesTags: ["Product"],
     }),
-    getAllProducts: builder.query<AllProduct[], void>({
+    getAllProducts: builder.query<AllProduct[], void>({ 
       query: () => '/products?currentCategory=all',
       providesTags: ["Product"],
     }),

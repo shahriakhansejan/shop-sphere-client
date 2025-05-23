@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const baseApi = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000",
+    baseUrl: "https://shop-sphere-server-rho.vercel.app",
     prepareHeaders: (headers) => {
       const token = localStorage.getItem("access-token");
       if (token) {
@@ -12,7 +12,7 @@ const baseApi = createApi({
       return headers;
     },
   }),
-  tagTypes: ["Category", "User", "Product", "Vendor", "Purchase", "Bookmark"],
+  tagTypes: ["Category", "User", "Product", "Vendor", "Purchase", "Order"],
   endpoints: () => ({}),
 });
 

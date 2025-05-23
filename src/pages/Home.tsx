@@ -1,17 +1,13 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-
+import About from "../components/HomeElement/About";
+import Banner from "../components/HomeElement/Banner/Banner";
 
 const Home = () => {
-    const { email, name } = useSelector((state: RootState)=> state.user);
-
-    return (
-        <div className="min-h-screen">
-            <h3>This is Home</h3>
-            <h4>Email : {email}</h4>
-            <h4>Name : {name}</h4>
-        </div>
-    );
+  return (
+    <div className="min-h-screen">
+      <Banner />
+      <About/>
+    </div>
+  );
 };
 
 export default Home;

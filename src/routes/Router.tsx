@@ -21,6 +21,7 @@ import AllProduct from "../pages/AllProduct";
 import Bookmarked from "../pages/Bookmarked";
 import ProductDetails from "../pages/ProductDetails";
 import PrivateRoute from "./PrivateRoute";
+import MyOrder from "../pages/MyOrder";
 
 const Router = () => {
   return (
@@ -34,6 +35,7 @@ const Router = () => {
           <Route path="/all-product" element={<PrivateRoute><AllProduct/></PrivateRoute>}/>
           <Route path="/bookmarked" element={<PrivateRoute><Bookmarked/></PrivateRoute>}/>
           <Route path="/product-details/:id" element={<PrivateRoute><ProductDetails/></PrivateRoute>}/>
+          <Route path="/orders" element={<PrivateRoute><MyOrder/></PrivateRoute>}/>
         </Route>
 
         {/* Admin Layout */}

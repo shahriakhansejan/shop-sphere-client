@@ -12,42 +12,25 @@ const Navbar = () => {
 
   const navMenu = (
     <>
-      <li>
-        <NavLink to="/">Home</NavLink>{" "}
-      </li>
-      <li>
-        <NavLink to="/sign-up">Sign Up</NavLink>{" "}
-      </li>
-      <li>
-        <NavLink to="/sign-in">Sign In</NavLink>{" "}
-      </li>
+      <li><NavLink to="/">Home</NavLink></li>
+      <li><NavLink to="/sign-up">Sign Up</NavLink></li>
+      <li><NavLink to="/sign-in">Sign In</NavLink></li>
     </>
   );
   const userNav = (
     <>
-      <li>
-        <NavLink to="/">Home</NavLink>{" "}
-      </li>
-      <li>
-        <NavLink to="/all-product">Products</NavLink>{" "}
-      </li>
-      <li>
-        <NavLink to="/bookmarked">Bookmarked</NavLink>{" "}
-      </li>
+      <li><NavLink to="/">Home</NavLink></li>
+      <li><NavLink to="/all-product">Products</NavLink></li>
+      <li><NavLink to="/bookmarked">Bookmarked</NavLink></li>
+      <li><NavLink to="/orders">My Order</NavLink></li>
     </>
   );
 
   const adminNav = (
     <>
-      <li>
-        <NavLink to="/">Home</NavLink>{" "}
-      </li>
-      <li>
-        <NavLink to="/admin/admin-home">Admin</NavLink>{" "}
-      </li>
-      <li>
-        <NavLink to="/vendor/ledger">Vendor</NavLink>{" "}
-      </li>
+      <li><NavLink to="/">Home</NavLink></li>
+      <li><NavLink to="/admin/admin-home">Admin</NavLink></li>
+      <li><NavLink to="/vendor/ledger">Vendor</NavLink></li>
     </>
   );
 
@@ -65,7 +48,7 @@ const Navbar = () => {
             {email ? (data?.admin ? adminNav : userNav) : navMenu}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">ShopSphere</a>
+        <a className="btn btn-ghost text-[#FF3811] font-bold text-2xl">ShopSphere</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{email ? (data?.admin ? adminNav : userNav) : navMenu}</ul>
